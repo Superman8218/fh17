@@ -3,7 +3,7 @@
 <head>
 	{% load staticfiles %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="https://fh17-msallen.c9users.io/static/fh17/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="{% static 'fh17/css/style.css' %}" />
     <title>Craig Park YSA</title>
 </head>
 
@@ -18,7 +18,7 @@
 	</div>
     <div id="mainPicture">
     	<div class="picture">
-    	    <img src="https://fh17-msallen.c9users.io/static/fh17/images/newport_beach_temple.jpg"/>
+			<img src="{% static 'fh17/images/newport_beach_temple.jpg' %}"/>
         </div>
     </div>
     <div class="contentBox">
