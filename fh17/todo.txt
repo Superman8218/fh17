@@ -1,0 +1,9 @@
+Work complete form:
+-some method of determining who did it (can be done by login if desired)
+-some method of determining if they are in the EQ or RS (can be done by login if desired)
+-people should be able to submit the form as many times as they want and the data acumulate
+-4 categories of work done
+    -completed a new generation- which generation (2,3,4,5..)
+    -records indexed- # of records, record source (ex. U.S. Passenger Ships, Civil War Military Records)
+    -names- # of names- put in list of names
+    -memories/stories/pictures- # of stories- optional submit story/picture
