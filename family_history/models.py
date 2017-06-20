@@ -9,9 +9,9 @@ from profiles.models import Profile
 
 class FamilyHistoryStats(models.Model):
     generations = models.IntegerField(blank=True, default=0)
+    names = models.IntegerField(blank=True, default=0)
     indexed = models.IntegerField(blank=True, default=0)
     memories = models.IntegerField(blank=True, default=0)
-    names = models.IntegerField(blank=True, default=0)
 
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
 

@@ -39,3 +39,4 @@ class UserFormMixin(forms.Form):
 class RegistrationForm(UserFormMixin, UserCreationForm): 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
+        self.order_fields(['username', 'password1', 'password2'])

@@ -15,6 +15,19 @@ class ProgressForm(forms.Form):
 
     )
 
+    names = forms.IntegerField(
+            widget=forms.NumberInput(attrs=
+                {
+                    'class':'form-control',
+                    'name':'names',
+                    'size':'50',
+                    'min': '0',
+                    'max': '10',
+                }),
+            label='Names',
+            help_text='The number of new baptism-elegible names you have found'
+    )
+
     indexed = forms.IntegerField(
             widget=forms.NumberInput(attrs=
                 {
@@ -26,7 +39,6 @@ class ProgressForm(forms.Form):
                 }),
             label='Records Indexed',
             help_text='The number of new records you have indexed'
-
     )
 
     memories = forms.IntegerField(
@@ -40,19 +52,4 @@ class ProgressForm(forms.Form):
                 }),
             label='Memories Added',
             help_text='The number of new memories you have added'
-
-    )
-
-    names = forms.IntegerField(
-            widget=forms.NumberInput(attrs=
-                {
-                    'class':'form-control',
-                    'name':'names',
-                    'size':'50',
-                    'min': '0',
-                    'max': '10',
-                }),
-            label='Names',
-            help_text='The number of new baptism-elegible names you have found'
-
     )
