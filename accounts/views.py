@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.core.urlresolvers import reverse
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from django.views.generic.base import TemplateView
@@ -9,8 +14,10 @@ from django.views.generic import View
 
 from forms import RegistrationForm
 
-def register(request):
-    form = EmeraldGovRegistrationForm(data=request.POST or None)
+from pudb import set_trace
+
+def register_view(request):
+    form = RegistrationForm(data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         new_user = form.save()
         new_user = authenticate(username=form.cleaned_data['username'],
@@ -46,9 +53,9 @@ class LoginView(View):
             else:
                 return HttpResponse("Your account is disabled")
         else:
-            print 'Invalid login details: {0}, {1}'.format(username, password)
-            return HttpResponse("Invalid login details supplied.")
+            messages.add_message(self.request, messages.INFO, 'Invalid login')
+            return HttpResponseRedirect(reverse('accounts:login'))
 
-def logout(request):
+def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('accounts:login'))

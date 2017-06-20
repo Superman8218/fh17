@@ -17,10 +17,16 @@
 </head>
 
 <body>
+	{% for message in messages %}
+		<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+	{% endfor %}
 	<div class="auth">
 		{% if request.user.is_authenticated %}
 
-		{{ user.username }}
+		<div>Welcome, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</div>
+		<div class="div">
+			<a href="{% url 'accounts:logout' %}">Logout</a>
+		</div>
 
 		{% else %}
 

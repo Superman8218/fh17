@@ -1,0 +1,19 @@
+To install this app you must:
+
+
+Add this line to your URLconf:
+
+	url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+
+
+Add 'accounts' to you INSTALLED_APPS
+
+
+Create this record in you SETTINGS file:
+
+	BASE_TEMPLATE = 'path/to/base_template'
+
+
+Add this to your list of context processors:
+
+	'accounts.context_processors.base_template',

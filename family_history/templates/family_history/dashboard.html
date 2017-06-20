@@ -2,6 +2,11 @@
 
 {% block content %}
 
-This is the dashboard
+<p><strong>Generations Complete</strong>: {{ stats.generations }}</p>
+<p><strong>Names Found</strong>: {{ stats.names }}</p>
+<p><strong>Records Indexed</strong>: {{ stats.indexed }}</p>
+<p><strong>Memories Preserved</strong>: {{ stats.memories }}</p>
+<a href="{% url 'fh:progress' %}">Update your progress</a>
+
 
 {% endblock %}

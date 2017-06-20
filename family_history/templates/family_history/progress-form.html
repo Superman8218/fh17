@@ -2,9 +2,8 @@
 
 {% block content %}
 
-<form class="form" action="#">
-	{{ form }}
-	<button type=submit>Submit</button>
+<form class="form" action="{% url 'fh:progress' %}" method="POST">
+	{% include 'fh17/form-snippet.html' %}
 </form>
 
 {% endblock %}

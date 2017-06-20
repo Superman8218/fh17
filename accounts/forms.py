@@ -3,9 +3,9 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 class UserFormMixin(forms.Form):
 
-    email = forms.EmailField(
-            label='Email',
-            widget=forms.EmailInput(attrs=
+    username = forms.CharField(
+            label='Username',
+            widget=forms.TextInput(attrs=
                 {
                     'class':'form-control',
                     'name':'username',
