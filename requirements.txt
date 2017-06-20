@@ -1,6 +1,7 @@
 dj-database-url==0.4.0
 Django==1.11
 django-analytical==2.0.0
+django-appconf==1.0.2
 django-crispy-forms==1.6.0
 django-filter==1.0.2
 django-pudb==0.1.0

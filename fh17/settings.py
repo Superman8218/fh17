@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'accounts',
     'family_history',
     'profiles',
-
-    'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [
