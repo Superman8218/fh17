@@ -1,9 +1,9 @@
 from django.conf.urls import url
 
-from views import dashboard, base, ProgressFormView
+from views import DashboardView, ProgressFormView, ReportsView
 
 urlpatterns = [
-        url(r'^$', base, name='base'),
-        url(r'^dashboard$', dashboard, name='dashboard'),
-        url(r'^progress$', ProgressFormView.as_view(), name='progress'),
+        url(r'^$', DashboardView, name='dashboard'),
+        url(r'^progress$', ProgressFormView, name='progress'),
+        url(r'^reports$', ReportsView.as_view(), name='reports'),
 ]

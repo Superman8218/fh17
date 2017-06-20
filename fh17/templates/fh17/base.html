@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
 	{% load staticfiles %}
@@ -17,25 +17,38 @@
 </head>
 
 <body>
-    <div id="page">
-		<div class="topNaviagationLink"><a href="{% url 'home' %}">Home</a></div>
-		<div class="topNaviagationLink"><a href="{% url 'fh:base' %}">Family History Initiative</a></div>
-        <!-- More links at the top can be added later
-        <div class="topNaviagationLink"><a href="index.html">Events</a></div>
-        <div class="topNaviagationLink"><a href="index.html">Housing</a></div>-->
-		<div class="topNaviagationLink"><a href="{% url 'contact' %}">Contact</a></div>
+	<div class="auth">
+		{% if request.user.is_authenticated %}
+
+		{{ user.username }}
+
+		{% else %}
+
+		<a href="{% url 'accounts:login' %}">Login</a>
+
+		{% endif %}
 	</div>
-    <div id="mainPicture">
-    	<div class="picture">
-			<img src="{% static 'fh17/images/newport_beach_temple.jpg' %}"/>
-        </div>
-    </div>
-    <div class="contentBox">
-	    <div class="innerBox">
-			{% block content %}
-			{% endblock %}
-        </div>
-    </div>
+	<div class="container-fluid">
+		<div id="page">
+			<div class="topNaviagationLink"><a href="{% url 'home' %}">Home</a></div>
+			<div class="topNaviagationLink"><a href="{% url 'fh:dashboard' %}">Family History Initiative</a></div>
+			<!-- More links at the top can be added later
+			<div class="topNaviagationLink"><a href="index.html">Events</a></div>
+			<div class="topNaviagationLink"><a href="index.html">Housing</a></div>-->
+			<div class="topNaviagationLink"><a href="{% url 'contact' %}">Contact</a></div>
+		</div>
+		<div id="mainPicture">
+			<div class="picture">
+				<img src="{% static 'fh17/images/newport_beach_temple.jpg' %}"/>
+			</div>
+		</div>
+		<div class="contentBox">
+			<div class="innerBox">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
 
 <!-- jquery -->
 <script

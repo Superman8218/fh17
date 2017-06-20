@@ -34,11 +34,16 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
     'family_history',
+
+    'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -58,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "templates")
+            os.path.join(BASE_DIR, "fh17/templates")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -67,10 +72,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.base_template',
             ],
         },
     },
 ]
+
+BASE_TEMPLATE = 'fh17/base.html'
 
 WSGI_APPLICATION = 'fh17.wsgi.application'
 

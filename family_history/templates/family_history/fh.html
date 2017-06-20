@@ -1,5 +1,8 @@
 {% extends 'fh17/base.html' %}
 
+<!--Load Django Bootstrap Form-->
+{% load bootstrap %}
+
 {% block content %}
 
 <h1>Craig Park YSA</h1>
@@ -16,6 +19,5 @@
 	<br />
  </div>
 
- <a href="{% url 'fh:progress' %}" class="fh-form-link">Report Family History Progress</a>
 
  {% endblock %}

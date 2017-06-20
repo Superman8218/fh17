@@ -18,12 +18,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
 
-from fh17.views import home
-from fh17.views import contact
+from fh17.views import HomeView
+from fh17.views import ContactView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^contact$', ContactView.as_view(), name='contact'),
     url(r'^fh/', include('family_history.urls', namespace='fh')),
-    url(r'^contact', contact, name='contact'),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
 ]

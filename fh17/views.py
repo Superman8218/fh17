@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
-def home(request):
-    return render(request, 'fh17/home.html')
+class HomeView(TemplateView):
+    template_name = 'fh17/home.html'
 
-def contact(request):
-    return render(request, 'fh17/contact.html')
+class ContactView(TemplateView):
+    template_name = 'fh17/contact.html'
