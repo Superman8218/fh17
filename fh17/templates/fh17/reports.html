@@ -1,0 +1,59 @@
+{% extends 'fh17/base.html' %}
+
+{% block content %}
+
+<table class="table">
+	<tr>
+		<th></th>
+		<th>
+			Elder's Quorum
+		</th>
+		<th>
+			Relief Society
+		</th>
+	</tr>
+		<td>
+			Generations
+		</td>
+		<td>
+			{{ eq_generations_total }}
+		</td>
+		<td>
+			{{ rs_generations_total }}
+		</td>
+	<tr>
+	</tr>
+		<td>
+			Names
+		</td>
+		<td>
+			{{ eq_names_total }}
+		</td>
+		<td>
+			{{ rs_names_total }}
+		</td>
+	<tr>
+	</tr>
+		<td>
+			Indexed
+		</td>
+		<td>
+			{{ eq_indexed_total }}
+		</td>
+		<td>
+			{{ rs_indexed_total }}
+		</td>
+	<tr>
+	</tr>
+		<td>
+			Memories
+		</td>
+		<td>
+			{{ eq_memories_total }}
+		</td>
+		<td>
+			{{ rs_memories_total }}
+		</td>
+	<tr>
+
+ {% endblock %}

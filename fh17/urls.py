@@ -20,11 +20,14 @@ from django.conf.urls import include
 
 from fh17.views import HomeView
 from fh17.views import ContactView
+from fh17.views import ReportsView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^contact$', ContactView.as_view(), name='contact'),
+    url(r'^reports$', ReportsView.as_view(), name='reports'),
     url(r'^fh/', include('family_history.urls', namespace='fh')),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^profiles/', include('profiles.urls', namespace='profiles')),
 ]

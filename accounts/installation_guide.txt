@@ -17,3 +17,9 @@ Create this record in you SETTINGS file:
 Add this to your list of context processors:
 
 	'accounts.context_processors.base_template',
+
+A list of variables you can set, and what they do:
+
+BASE_TEMPLATE - The template that all templates should inherit from
+LOGIN_TEMPLATE - A way to override the standard login template
+REGISTRATION_TEMPLATE - A way to override the standard registration template

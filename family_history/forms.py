@@ -11,8 +11,8 @@ class ProgressForm(forms.Form):
                     'max': '10',
                 }),
             label='Generations Completed',
-            help_text='The total number of generations you have completed so far'
-
+            help_text='The total number of generations you have completed so far',
+            required=False,
     )
 
     names = forms.IntegerField(
@@ -25,7 +25,8 @@ class ProgressForm(forms.Form):
                     'max': '10',
                 }),
             label='Names',
-            help_text='The number of new baptism-elegible names you have found'
+            help_text='The number of new baptism-elegible names you have found',
+            required=False,
     )
 
     indexed = forms.IntegerField(
@@ -38,7 +39,8 @@ class ProgressForm(forms.Form):
                     'max': '10',
                 }),
             label='Records Indexed',
-            help_text='The number of new records you have indexed'
+            help_text='The number of new records you have indexed',
+            required=False,
     )
 
     memories = forms.IntegerField(
@@ -51,5 +53,6 @@ class ProgressForm(forms.Form):
                     'max': '10',
                 }),
             label='Memories Added',
-            help_text='The number of new memories you have added'
+            help_text='The number of new memories you have added',
+            required=False,
     )

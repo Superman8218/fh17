@@ -3,13 +3,11 @@
 {% block title %}Create an account {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h2 class="std-header">Create an Account</h2>
-        <form action="/accounts/register/" method="post">{% csrf_token %}
-                {{ form }}
-                <button type="submit" class="btn btn-primary" value="Create the account">Create the Account</button>
-        </form>
-    </div>
+	<h2 class="std-header">Create an Account</h2>
+	<form action="/accounts/register/" method="post">{% csrf_token %}
+			{{ form }}
+			<button type="submit" class="btn btn-primary" value="Create the account">Create the Account</button>
+	</form>
 {% endblock %}
 
 {% block footer %}

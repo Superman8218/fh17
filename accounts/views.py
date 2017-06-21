@@ -12,11 +12,14 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.views.generic import View
 
+from account_conf import UPDATE_PROFILE_URL, LOGIN_TEMPLATE, REGISTRATION_TEMPLATE
 from forms import RegistrationForm
 
 from pudb import set_trace
 
 def register_view(request):
+    registration_template = REGISTRATION_TEMPLATE if REGISTRATION_TEMPLATE else 'accounts/register.html'
+
     form = RegistrationForm(data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         new_user = form.save()
@@ -24,8 +27,13 @@ def register_view(request):
                                 password=form.cleaned_data['password1'],
                                )
         login(request, new_user)
-        return HttpResponseRedirect(reverse('home'))
-    return render(request, 'accounts/register.html', {
+
+        if UPDATE_PROFILE_URL:
+            return HttpResponseRedirect(reverse(UPDATE_PROFILE_URL, kwargs={'pk':new_user.profile.pk}))
+        else:
+            return HttpResponseRedirect(reverse('home'))
+
+    return render(request, registration_template, {
         'form': form
     })
 
@@ -34,7 +42,9 @@ class LoginView(View):
         args = {}
         if 'next' in request.GET:
             args['next'] = request.GET['next']
-        return render(request, 'accounts/login.html', args)
+
+        login_template = LOGIN_TEMPLATE if LOGIN_TEMPLATE else 'accounts/login.html'
+        return render(request, login_template, args)
 
     def post(self, request):
         username = request.POST['username']

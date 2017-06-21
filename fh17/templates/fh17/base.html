@@ -20,21 +20,23 @@
 	{% for message in messages %}
 		<div class="alert alert-{{ message.tags }}">{{ message }}</div>
 	{% endfor %}
-	<div class="auth">
+	<div id="auth">
 		{% if request.user.is_authenticated %}
 
-		<div>Welcome, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</div>
-		<div class="div">
-			<a href="{% url 'accounts:logout' %}">Logout</a>
+		<div>Welcome, <a id="username" href="{% url 'profiles:update' pk=request.user.profile.id %}">{% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</a></div>
+
+		<div id="logout">
+			<a id="logout" href="{% url 'accounts:logout' %}">Logout</a>
 		</div>
 
 		{% else %}
-
-		<a href="{% url 'accounts:login' %}">Login</a>
+		<div>
+			<a id="login" href="{% url 'accounts:login' %}">Login</a>
+		</div>
 
 		{% endif %}
 	</div>
-	<div class="container-fluid">
+	<div class="container">
 		<div id="page">
 			<div class="topNaviagationLink"><a href="{% url 'home' %}">Home</a></div>
 			<div class="topNaviagationLink"><a href="{% url 'fh:dashboard' %}">Family History Initiative</a></div>
@@ -42,6 +44,9 @@
 			<div class="topNaviagationLink"><a href="index.html">Events</a></div>
 			<div class="topNaviagationLink"><a href="index.html">Housing</a></div>-->
 			<div class="topNaviagationLink"><a href="{% url 'contact' %}">Contact</a></div>
+			{% if request.user.is_superuser %}
+			<div class="topNaviagationLink"><a href="{% url 'reports' %}">Reports</a></div>
+			{% endif %}
 		</div>
 		<div id="mainPicture">
 			<div class="picture">

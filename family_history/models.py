@@ -15,6 +15,16 @@ class FamilyHistoryStats(models.Model):
 
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
 
+    class Meta:
+        verbose_name = 'Family History Stats'
+        verbose_name_plural = 'Famlily History Stats Records'
+
+    def __str__(self):
+        if self.profile.first_name:
+            return '{0} {1}'.format(self.profile.first_name, self.profile.last_name)
+        else:
+            return self.profile.user.username
+
 @receiver(post_save, sender=Profile)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

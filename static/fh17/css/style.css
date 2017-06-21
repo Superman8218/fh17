@@ -194,7 +194,31 @@ text-align: center;
 }
 p {text-align: left;}
 
-.form-control
+#progress-form-link
 {
-	max-width: 100%
+	color: blue;
+	font-size: medium;
+}
+
+#auth
+{
+	float: left;
+	margin-left: 150px;
+	margin-top: 10px;
+	font-size: medium;
+}
+
+#username
+{
+	color: blue;
+}
+
+#login
+{
+	color: blue;
+}
+
+#logout
+{
+	color: blue;
 }

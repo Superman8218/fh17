@@ -28,10 +28,17 @@ class ProgressFormView(LoginRequiredMixin, FormView):
     def form_valid(self, form):
         user_stats = self.request.user.profile.familyhistorystats
 
-        user_stats.generations = form.cleaned_data['generations']
-        user_stats.indexed += form.cleaned_data['indexed']
-        user_stats.memories += form.cleaned_data['memories']
-        user_stats.names += form.cleaned_data['names']
+        if form.cleaned_data['generations']:
+            user_stats.generations = form.cleaned_data['generations']
+
+        if form.cleaned_data['indexed']:
+            user_stats.indexed += form.cleaned_data['indexed']
+
+        if form.cleaned_data['memories']:
+            user_stats.memories += form.cleaned_data['memories']
+
+        if form.cleaned_data['names']:
+            user_stats.names += form.cleaned_data['names']
 
         user_stats.save()
 
