@@ -16,3 +16,4 @@ emerald/staticfiles/
 logs/*
 sam/sam_files/*
 node_modules/
+db.sqlite3
