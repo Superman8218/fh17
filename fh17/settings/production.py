@@ -1,6 +1,6 @@
 from .base import *
 
 # THIS IS ONLY TEMPORARY!!!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.fh17.herokuapp.com']
