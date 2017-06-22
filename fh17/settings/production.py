@@ -1,6 +1,6 @@
 from .base import *
 
 # THIS IS ONLY TEMPORARY!!!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['www.emeraldgov.com']
+ALLOWED_HOSTS = ['www.fh17.herokuapp.com']
