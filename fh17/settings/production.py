@@ -3,4 +3,4 @@ from .base import *
 # THIS IS ONLY TEMPORARY!!!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.fh17.herokuapp.com']
+ALLOWED_HOSTS = ['fh17.herokuapp.com']
